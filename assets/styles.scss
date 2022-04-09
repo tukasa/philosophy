@@ -3,14 +3,15 @@
 # only main files contain this front matter, not partials.
 ---
 
-@import "sidebar";
 @import "variables";
 @import "base";
-@import "layout";
-@import "posts";
 @import "type";
+@import "layout";
+@import "sidebar";
+@import "posts";
 @import "author";
 @import "archive";
 @import "thesis";
 @import "article";
+@import "link";
 

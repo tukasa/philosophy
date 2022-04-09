@@ -1,6 +1,6 @@
 # Setup
-title: PPxMemo
-description: about Paper Plane xUI
+title: non ridere non lugere neque detestari sed intelligere
+description: about philosophy
 avatar: /avatar.jpeg
 cover_image: /bg.jpeg
 
@@ -13,6 +13,7 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jemoji
 # Optimize Jekyl SEO Tag
 twitter:
   username: tukasa1900
@@ -37,11 +38,33 @@ author:
 # Build settings
 collections_dir: my_collections
 collections:
+  ethica:
+    output: true
+    permalink: /theses/ethica/:name
+  historyofphilosophy:
+    output: true
+    permalink: /theses/historyofphilosophy/:name
   authors:
     output: true
   basic:
     output: true
+  theses:
+    output: true
 defaults:
+  - scope:
+      path: ""
+      type: "ethica"
+    values:
+      layout: "thesis"
+      parenttitle: "スピノザ『エチカ』の考察"
+      parenturl: "/theses/ethica/"
+  - scope:
+      path: ""
+      type: "historyofphilosophy"
+    values:
+      layout: "thesis"
+      parenttitle: "一時間でわかる近世哲学史"
+      parenturl: "/theses/historyofphilosophy/"
   - scope:
       path: ""
       type: "authors"
@@ -53,11 +76,11 @@ defaults:
       image: true
   - scope:
       path: ""
-      type: "basic"
+      type: "posts"
     values:
-      layout: "page"
+      layout: "post"
   - scope:
       path: ""
-      type: "posts"
+      type: "theses"
     values:
       layout: "page"

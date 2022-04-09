@@ -1,0 +1,28 @@
+---
+layout: default
+title: スピノザ『エチカ』の考察
+auther: tukasa
+folder: ethica
+description: 『エチカ』全体を定理に即して説明。デカルトと総合的方法を理解しない限り、絶対にスピノザは理解できないという内容。
+permalink: /theses/ethica/
+---
+
+<h1>{{ page.title }}</h1>
+
+{% for collection in site.collections %}
+  {% if collection.label == page.folder %}
+    {% assign groups = collection.docs | group_by: "part" %}
+  {% endif %}
+{% endfor %}
+
+{% for group in groups %}
+  <h2 id="{{ group.name }}">{{ group.name }}</h2>
+  <ul>
+  {% for item in group.items %}
+    <li class="post-list-by-part">
+       <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+       <time datetime="{{ item.date | date_to_xmlschema }}">{{ item.date | date: "%Y-%m-%d" }}</time>
+    </li>
+  {% endfor %}
+  </ul>
+{% endfor %}

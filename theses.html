@@ -1,0 +1,19 @@
+---
+layout: page
+title: Theses
+permalink: /theses/
+---
+<article class="post">
+  <div class="post-content">
+    <ul>
+      {% for thesis in site.theses %}
+      <li>
+      <a href="{{ thesis.url | relative_url }}">{{ thesis.title }}</a>
+      <p>
+      {{ thesis.description }}
+      </p>
+      </li>
+    {% endfor %}
+    </ul>
+  </div>
+</article>
