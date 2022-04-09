@@ -10,8 +10,7 @@
     </div>
   {% endif %}
   <div class="masthead-title">
-    {% assign array_title = site.title | split: "," %}
-    <a href="{{ "/" | relative_url }}" title="Home">{{ site.title }}</a>
+    <a href="{{ "/" | relative_url }}">{{ site.title }}</a>
   </div>
   <div class="masthead-tagline">
     <small>{{ site.description }}</small>
