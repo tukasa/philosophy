@@ -70,7 +70,7 @@
 
 .post-tags-icon {
   display: inline-block;
-  margin-right: var(--spacer);
+  margin-right: .2em;
 }
 
 .post-tags {
@@ -121,7 +121,8 @@
 }
 
 .parent-link {
-  padding: .1em .5em;
+    padding: .1em;
+    margin-right: 1em;
 }
 
 .post-nav {
