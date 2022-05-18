@@ -43,6 +43,9 @@ collections:
   ethica:
     output: true
     permalink: /theses/ethica/:name
+  ethica2:
+    output: true
+    permalink: /theses/ethica2/:name
   historyofphilosophy:
     output: true
     permalink: /theses/historyofphilosophy/:name
@@ -60,6 +63,13 @@ defaults:
       layout: "thesis"
       parenttitle: "スピノザ『エチカ』の考察"
       parenturl: "/theses/ethica/"
+  - scope:
+      path: ""
+      type: "ethica2"
+    values:
+      layout: "thesis"
+      parenttitle: "スピノザ『エチカ』の考察"
+      parenturl: "/theses/ethica2/"
   - scope:
       path: ""
       type: "historyofphilosophy"
