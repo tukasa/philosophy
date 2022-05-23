@@ -49,6 +49,9 @@ collections:
   historyofphilosophy:
     output: true
     permalink: /theses/historyofphilosophy/:name
+  ducontratsocial:
+    output: true
+    permalink: /theses/ducontratsocial/:name
   authors:
     output: true
   basic:
@@ -77,6 +80,13 @@ defaults:
       layout: "thesis"
       parenttitle: "一時間でわかる近世哲学史"
       parenturl: "/theses/historyofphilosophy/"
+  - scope:
+      path: ""
+      type: "ducontratsocial"
+    values:
+      layout: "thesis"
+      parenttitle: "ルソー『社会契約論』の考察"
+      parenturl: "/theses/ducontratsocial/"
   - scope:
       path: ""
       type: "authors"
