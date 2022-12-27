@@ -12,6 +12,6 @@ tukasa
 :balloon:
 - [つかさのほえほえ日記](http://hoehoetukasa.blogspot.com/)
 - [PPxMemo](https://tukasa.github.io/ppxmemo/)
-- [Memo on the Electron](https://sites.google.com/site/moesystem/)
+- [moe](https://tukasa.github.io/moe/)
 - [hoehoesoft](https://sites.google.com/site/hoehoesoft2/)
 - [つかさのxops日記](http://xopstukasa.blogspot.com/)
