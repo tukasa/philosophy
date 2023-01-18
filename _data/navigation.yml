@@ -1,10 +1,10 @@
 - title: About
   url: /
-- title: Theses
-  url: /theses/
-- title: Article
+- title: 論文
+  url: /thesis/
+- title: レジュメ時系列
   url: /article/
-- title: Tags
+- title: レジュメ分類別
   url: /tags/
 - title: Author
   url: /author/

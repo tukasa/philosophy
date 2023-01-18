@@ -2,39 +2,52 @@
 layout: default
 ---
 
-<article class="thesis">
-  <h1 class="page-title">{{ page.title }}</h1>
-  <div class="parent-link-section">
-    <i class="fa-solid fa-file"></i>
-    <a class="parent-link" href="{{ page.parenturl | relative_url }}">{{page.parenttitle}}</a>
-    {% if page.part %}
-    {% assign slugified_part = page.part | slugify %}
-    <i class="fa-solid fa-tags"></i>
-    <a class="parent-link" href="{{ page.parenturl | relative_url }}#{{ slugified_part }}">{{page.part}}</a>
-    {% endif %}
-  </div>
 
-  {{ content }}
+<h1 class="page-title">{{ page.title }}</h1>
 
-  <time datetime="{{ page.date | date_to_xmlschema }}">
-    <ul>
-      <li>Created at:{{ page.date | date: "%Y-%m-%d" }}</li>
-      {% if page.last_modified_at %}
-      <li>Last modified at:{{ page.last_modified_at | date: "%Y-%m-%d" }}</li>
-      {% endif %}
-    </ul>
-  </time>
-</article>
+{% for collection in site.collections %}
+  {% if collection.label == page.folder %}
+    {% assign categories = collection.docs | group_by: "part" %}
+  {% endif %}
+{% endfor %}
 
-<div class="post-nav">
-  <div>
-    {% if page.previous.url %}
-    <a href="{{page.previous.url | relative_url }}">&laquo;&nbsp;{{page.previous.title}}</a>
-    {% endif %}
-  </div>
-  <div class="post-nav-next">
-    {% if page.next.url %}
-    <a href="{{page.next.url | relative_url }}">{{page.next.title}}&nbsp;&raquo;</a>
-    {% endif %}
-  </div>
+
+{% if categories.size > 1 %}
+<div class="categories-wrapper">
+  <ul class="categories">
+    {% for category in categories %}
+     {% assign category_name = category.name %}
+     {% assign slugified_category_name = category_name | slugify %}
+       <li>
+         {% capture link %}{{ page.permalink }}#{{ category_name }}{% endcapture %}
+         <a class="category" href="{{ link | relative_url }}">
+           <span>{{ category_name }}</span>
+           <span class="category-count">{{ category.size }}</span>
+         </a>
+       </li>
+   {% endfor %}
+  </ul>
 </div>
+{% endif %}
+
+{% for category in categories %}
+  <h2 id="{{ category.name }}">{{ category.name }}</h2>
+  <ul>
+  {% assign chapter = category.items | sort: "path" %}
+  {% for item in chapter %}
+    <li class="post-list-by-part">
+       <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+       <time datetime="{{ page.date | date_to_xmlschema }}">
+       {% if item.last_modified_at %}
+         {{ item.last_modified_at }}
+       {% else %}
+         {{ item.date | date: "%Y-%m-%d" }}
+       {% endif %}
+       </time>
+    </li>
+  {% endfor %}
+  </ul>
+  <a href="#" onclick="backToTop()" class="back-to-top">Top &#8648;</a>
+{% endfor %}
+
+{% include footer.html %}

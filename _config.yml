@@ -42,51 +42,51 @@ collections_dir: my_collections
 collections:
   ethica:
     output: true
-    permalink: /theses/ethica/:name
+    permalink: /thesis/ethica/:name
   ethica2:
     output: true
-    permalink: /theses/ethica2/:name
+    permalink: /thesis/ethica2/:name
   historyofphilosophy:
     output: true
-    permalink: /theses/historyofphilosophy/:name
+    permalink: /thesis/historyofphilosophy/:name
   ducontratsocial:
     output: true
-    permalink: /theses/ducontratsocial/:name
+    permalink: /thesis/ducontratsocial/:name
   authors:
     output: true
   basic:
     output: true
-  theses:
+  thesis:
     output: true
 defaults:
   - scope:
       path: ""
       type: "ethica"
     values:
-      layout: "thesis"
+      layout: "chapter"
       parenttitle: "スピノザ『エチカ』の考察"
-      parenturl: "/theses/ethica/"
+      parenturl: "/thesis/ethica/"
   - scope:
       path: ""
       type: "ethica2"
     values:
-      layout: "thesis"
+      layout: "chapter"
       parenttitle: "スピノザ『エチカ』の考察"
-      parenturl: "/theses/ethica2/"
+      parenturl: "/thesis/ethica2/"
   - scope:
       path: ""
       type: "historyofphilosophy"
     values:
-      layout: "thesis"
+      layout: "chapter"
       parenttitle: "一時間でわかる近世哲学史"
-      parenturl: "/theses/historyofphilosophy/"
+      parenturl: "/thesis/historyofphilosophy/"
   - scope:
       path: ""
       type: "ducontratsocial"
     values:
-      layout: "thesis"
+      layout: "chapter"
       parenttitle: "ルソー『社会契約論』の考察"
-      parenturl: "/theses/ducontratsocial/"
+      parenturl: "/thesis/ducontratsocial/"
   - scope:
       path: ""
       type: "authors"
@@ -103,6 +103,6 @@ defaults:
       layout: "post"
   - scope:
       path: ""
-      type: "theses"
+      type: "thesis"
     values:
-      layout: "page"
+      layout: "thesis"
