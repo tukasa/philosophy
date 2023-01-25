@@ -5,6 +5,9 @@ description: 泣かず、笑わず、ただ理解せよ
 avatar: /avatar.jpeg
 cover_image: /bg.jpeg
 timezone: Asia/Tokyo
+author: tukasa
+url: https://tukasa.github.io/philosophy/
+email: alpha01tks@gmail.com
 
 # kramdown
 kramdown:
@@ -32,10 +35,10 @@ sass:
   style: :compressed
 
 # Specify the author for blog posts
-author:
-  name: tukasa
-  url: https://github.com/tukasa/
-  email: alpha01tks@gmail.com
+#author:
+#  name: tukasa
+#  url: https://github.com/tukasa/
+#  email: alpha01tks@gmail.com
 
 # Build settings
 collections_dir: my_collections
