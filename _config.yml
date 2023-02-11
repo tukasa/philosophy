@@ -100,6 +100,10 @@ defaults:
     values:
       image: true
   - scope:
+      path: "assets/text"
+    values:
+      image: true
+  - scope:
       path: ""
       type: "posts"
     values:
