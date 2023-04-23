@@ -7,8 +7,27 @@ permalink: /thesis/
   <div class="post-content">
     <ul>
       {% for paper in site.thesis %}
-      <li>
+      <li class="thesis-list">
       <a href="{{ paper.url | relative_url }}">{{ paper.title }}</a>
+      <span>last update :
+      <time>
+      {% for collection in site.collections %}
+        {% if collection.label == paper.folder %}
+          {% assign last_modified_sort = collection.docs | sort: "last_modified_at" | reverse %}
+          {% assign created_sort = collection.docs | sort: "created_at" | reverse %}
+        {% endif %}
+      {% endfor %}
+        {% capture last_modified_date %}{{ last_modified_sort.first.last_modified_at | date: '%s' }}{% endcapture %}
+        {% capture created_date %}{{ created_sort.first.created_at | date: '%s' }}{% endcapture %}
+      {% if last_modified_date > created_date %}
+        {{ last_modified_sort.first.last_modified_at }}
+      {% else %}
+        {{ created_sort.first.created_at }}
+      {% endif %}
+      </time>
+      </span>
+      </li>
+      <li>
       <p>
       {{ paper.description }}
       </p>

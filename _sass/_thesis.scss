@@ -7,5 +7,15 @@
   justify-content: space-between;
   time {
     font-family: var(--code-font);
+    color: var(--gray-600);
+  }
+}
+
+.thesis-list {
+  display: flex;
+  justify-content: space-between;
+  span {
+    font-family: var(--code-font);
+    color: var(--gray-600);
   }
 }
