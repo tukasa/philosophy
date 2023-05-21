@@ -46,9 +46,6 @@ collections:
   ethica:
     output: true
     permalink: /thesis/ethica/:name
-  ethica2:
-    output: true
-    permalink: /thesis/ethica2/:name
   historyofphilosophy:
     output: true
     permalink: /thesis/historyofphilosophy/:name
