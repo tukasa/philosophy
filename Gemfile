@@ -22,3 +22,8 @@ gem 'tzinfo-data'
 
 # gem "webrick", "~> 1.7"
 gem "webrick"
+
+gem 'csv'
+gem 'base64'
+gem 'jekyll'
+gem 'bigdecimal'
